@@ -1,6 +1,7 @@
 <template>
   <div class="card">
-    <img src= "../assets/money-increase.png" alt="figura" class="imagem"/>
+    <!-- img :src= "figura" class="imagem" / -->
+    <img :src="require(`@/assets/img/${figura}`)"  class="imagem">
     <div>{{ nome }}</div>
     <div>Preço: {{ preco }}</div>
     <div>Abertura: {{ abertura }}</div>
@@ -26,7 +27,7 @@ export default {
 
 <style>
   .card{
-    width: 13.5vw;
+    width: 33vh;
     height: 33vh;
     background-color:var(--corCard);
 
@@ -38,6 +39,17 @@ export default {
         
     margin-top: 8px;
     padding-top: 8px;
+
+    border-radius: 100%;
+    border-style: solid;
+    border-color: var(--corBorda);
+
+    /*box-shadow porperties size x, size y, blur, radius, color*/
+    box-shadow: 8px 8px 5px var(--corSombraBorda);
+  }
+
+  .card:hover{
+    transform: scale(1.05);
   }
 
   .canto{
