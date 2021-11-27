@@ -1,11 +1,11 @@
 <template>
   <div class="card">
-    <!-- img :src= "figura" class="imagem" / -->
     <img :src="require(`@/assets/img/${figura}`)"  class="imagem">
     <div>{{ nome }}</div>
     <div>Preço: {{ preco }}</div>
     <div>Abertura: {{ abertura }}</div>
-    <div class= "canto">{{ variacao }} %</div>
+    <div class= "canto verde" v-if="variationF() >= 0" >{{ formatData(variationF()) }} %</div>
+    <div class= "canto vermelho" v-else >{{ formatData(variationF()) }} %</div>
   </div>
 </template>
 
@@ -17,10 +17,21 @@ export default {
     nome: String,
     preco: Number,
     abertura: Number,
-    variacao: Number,
   },
   components:{
-
+  },
+  data(){
+    return{
+      variation: 0,
+    }
+  },
+  methods:{
+    variationF: function() { 
+      return this.variation = ((this.preco * 100) / this.abertura) - 100
+    },
+    formatData: function(aFormatar) {
+      return (Math.round(aFormatar * 100) / 100).toFixed(2);
+    },
   },
 }
 </script>
@@ -44,8 +55,12 @@ export default {
     border-style: solid;
     border-color: var(--corBorda);
 
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 900;
+    color: var(--corBorda);
+
     /*box-shadow porperties size x, size y, blur, radius, color*/
-    box-shadow: 8px 8px 5px var(--corSombraBorda);
+    box-shadow: 8px 8px 15px var(--corBorda);
   }
 
   .card:hover{
@@ -54,13 +69,21 @@ export default {
 
   .canto{
     position: relative;
-    left: 45px; 
+    left: 32px; 
   }	
 
   .imagem{
     position: relative;
     bottom: 5px;
-    width: 5vw;
+    width: 67.13px;
     height: auto;
+  }
+
+  .verde{
+    color: green;
+  }
+
+  .vermelho{
+    color: red;
   }
 </style>

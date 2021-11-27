@@ -11,8 +11,7 @@
         :figura= 'ativo.figura'
         :nome= 'ativo.nome'
         :preco= 'ativo.preco' 
-        :abertura= "ativo.abertura" 
-        :variacao= "ativo.variacao" />  
+        :abertura= "ativo.abertura" />  
     </div>
   </div>
 </template>
@@ -30,59 +29,52 @@ export default {
       ativos: [
         {
           id: 0,
-          figura: 'money-increase.png',
+          figura: 'itsa4.png',
           nome: 'ITSA4',
-          preco: 10.22,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 9.83,
+          abertura: 9.89,
         },
         {
           id: 1,
-          figura: 'money-increase.png',
+          figura: 'movida.png',
           nome: 'MOVI3',
-          preco: 31.15,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 17.17,
+          abertura: 17.52,
         },
         {
           id: 2,
-          figura: 'money-increase.png',
+          figura: 'egie3.png',
           nome: 'EGIE3',
-          preco: 85.62,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 39.00,
+          abertura: 38.75,
         },
         {
           id: 3,
-          figura: 'money-increase.png',
+          figura: 'taesa.png',
           nome: 'TAEE11',
-          preco: 67.79,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 35.94,
+          abertura: 35.70,
         },
         {
           id: 4,
-          figura: 'money-increase.png',
+          figura: 'magalu.png',
           nome: 'MGLU3',
-          preco: 56.23,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 8.06,
+          abertura: 8.48,
         },
         {
           id: 5,
-          figura: 'money-increase.png',
+          figura: 'irbr3.png',
           nome: 'IRBR3',
-          preco: 9.63,
-          abertura: 10.22,
-          variacao: 0.00
+          preco: 4.14,
+          abertura: 4.07,
         },
         {
           id: 6,
-          figura: 'money-increase.png',
+          figura: 'itau.png',
           nome: 'ITUB3',
           preco: 29.78,
-          abertura: 10.22,
-          variacao: 0.00
+          abertura: 20.36,
         },
       ]}
   }
@@ -103,7 +95,7 @@ export default {
         justify-content: space-evenly;
         /*column-gap: 0vw;*/
 
-        background-color: var(--corFundoContainer);
+        background-color: var(--corContainer);
         /*background-image: url('../assets/img/moeda.svg'); */
 
         overflow-y: auto;

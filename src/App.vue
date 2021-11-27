@@ -20,13 +20,13 @@ export default {
 
 <style>
   :root{
-    --corLetraHeader: #927328;
+    /*--corLetraHeader: #927328;
     --corHeader: #8B92B6;
-    --corCard: #e0c583;
-    /* --corFundoContainer: #BDC1D7; */
-    --corFundoContainer: #FFF5DB; 
-    --corBorda: #B8994E;      
-    --corSombraBorda: #927328;  
+    --corFundoContainer: #BDC1D7; */ 
+    --corCard: #E0C583;
+    --corContainer: #FFF5DB; 
+    --corPenultimoTom: #B8994E;      
+    --corBorda: #927328;  
   }
   body{
     margin: 0px;
