@@ -2,8 +2,8 @@
   <div class="card">
     <img :src="require(`@/assets/img/${figura}`)"  class="imagem">
     <div>{{ nome }}</div>
-    <div>Preço: {{ preco }}</div>
-    <div>Abertura: {{ abertura }}</div>
+    <div>Preço: {{ formatData(preco) }}</div>
+    <div>Abertura: {{ formatData(abertura) }}</div>
     <div class= "canto verde" v-if="variationF() >= 0" >{{ formatData(variationF()) }} %</div>
     <div class= "canto vermelho" v-else >{{ formatData(variationF()) }} %</div>
   </div>
@@ -51,8 +51,8 @@ export default {
     margin-top: 8px;
     padding-top: 8px;
 
-    border-radius: 100%;
-    border-style: solid;
+    border-radius: 5%;
+    /*border-style: solid;*/
     border-color: var(--corBorda);
 
     font-family: 'Encode Sans', sans-serif;
@@ -67,9 +67,11 @@ export default {
     transform: scale(1.05);
   }
 
-  .canto{
+  .canto{    
+    align-self: flex-end;
     position: relative;
-    left: 32px; 
+    right: 10px;
+    margin-top: 18px;
   }	
 
   .imagem{

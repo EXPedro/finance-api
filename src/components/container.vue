@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class='container' >
+      <Botao />
       <Card v-for= "ativo in ativos" :key= "ativo.id"
         :figura= 'ativo.figura'
         :nome= 'ativo.nome'
@@ -12,17 +13,24 @@
         :nome= 'ativo.nome'
         :preco= 'ativo.preco' 
         :abertura= "ativo.abertura" />  
+      <Card v-for= "ativo in ativos" :key= "ativo.id"
+        :figura= 'ativo.figura'
+        :nome= 'ativo.nome'
+        :preco= 'ativo.preco' 
+        :abertura= "ativo.abertura" />  
     </div>
   </div>
 </template>
 
 <script>
 import Card from './card'
+import Botao from './button'
 
 export default {
   name: 'Container',
   components:{
     Card,
+    Botao,
   },
   data() {
     return {
@@ -69,13 +77,13 @@ export default {
           preco: 4.14,
           abertura: 4.07,
         },
-        {
+        /*{
           id: 6,
           figura: 'itau.png',
           nome: 'ITUB3',
           preco: 29.78,
           abertura: 20.36,
-        },
+        },*/
       ]}
   }
 }
@@ -84,14 +92,14 @@ export default {
 <style>
     .container{
         width: 100vw;
-        height: auto;
+        height: 100vh;
 
         position: relative;
 
         /*top: 10vh;  --saiu com remoção header */
 
         display: grid;
-        grid-template-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto auto;
         justify-content: space-evenly;
         /*column-gap: 0vw;*/
 
