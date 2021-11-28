@@ -2,14 +2,17 @@
   <div class="card">
     <img :src="require(`@/assets/img/${figura}`)"  class="imagem">
     <div>{{ nome }}</div>
-    <div>Preço: {{ formatData(preco) }}</div>
+    <div>Preço: {{ valorPreco() }}</div>
     <div>Abertura: {{ formatData(abertura) }}</div>
     <div class= "canto verde" v-if="variationF() >= 0" >{{ formatData(variationF()) }} %</div>
     <div class= "canto vermelho" v-else >{{ formatData(variationF()) }} %</div>
+    <!-- EditCard :preco = "preco" works! / -->
   </div>
 </template>
 
 <script>
+//import EditCard from './edit-card'
+
 export default {
   name: 'Card',
   props:{
@@ -19,10 +22,12 @@ export default {
     abertura: Number,
   },
   components:{
+    //EditCard,
   },
   data(){
     return{
       variation: 0,
+      cardPreco:0,
     }
   },
   methods:{
@@ -30,8 +35,12 @@ export default {
       return this.variation = ((this.preco * 100) / this.abertura) - 100
     },
     formatData: function(aFormatar) {
-      return (Math.round(aFormatar * 100) / 100).toFixed(2);
+      return (Math.round(aFormatar * 100) / 100).toFixed(2)
     },
+    valorPreco: function(){
+      this.cardPreco = this.formatData(this.preco)
+      return this.cardPreco
+    }
   },
 }
 </script>
@@ -65,6 +74,14 @@ export default {
 
   .card:hover{
     transform: scale(1.05);
+  }
+
+  .card:active{
+    position: absolute;
+    transform: scale(1.5);
+    margin-top: 160px;
+    left: 40%;
+    z-index: 9999;
   }
 
   .canto{    

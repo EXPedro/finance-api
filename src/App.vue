@@ -13,16 +13,18 @@ export default {
   name: 'App',
   components: {
     //Header,
-    Container,
-  }
+    Container,    
+  },
+  data() {
+    return {
+      showEdit: true,
+    }
+  },
 }
 </script>
 
 <style>
   :root{
-    /*--corLetraHeader: #927328;
-    --corHeader: #8B92B6;
-    --corFundoContainer: #BDC1D7; */ 
     --corCard: #E0C583;
     --corContainer: #FFF5DB; 
     --corPenultimoTom: #B8994E;      
